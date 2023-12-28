@@ -1,12 +1,13 @@
 // -- 1 --
 // У вас є масив об’єктів fruts, і в кожному з них є name
 // Напишіть код, який перетворює їх в масив імен.
-// const fruts = [
-//   { id: 0, name: "Apple" },
-//   { id: 1, name: "Tomat" },
-//   { id: 2, name: "Cherry" },
-//   { id: 3, name: "Orange" },
-// ];
+const fruts = [
+  { id: 0, name: "Apple" },
+  { id: 1, name: "Tomat" },
+  { id: 2, name: "Cherry" },
+  { id: 3, name: "Orange" },
+];
+
 // let name1 = fruts.map((item) => item.name);
 // console.log(name1);
 // -- 2 --
@@ -24,6 +25,7 @@ for (let i = 0; i < arr.length; i++) {
 // for (let i = 0; i < 5; i++) {
 // console.lpg( `цифра ${i}!` );
 // }
+// let i = 0;
 // while (i < 5) {
 //   console.log(`цифра ${i}!`);
 //   i++;
@@ -38,18 +40,19 @@ for (let i = 0; i < arr.length; i++) {
 // -- 5 --
 // Вирахуйте середній вік
 const girls = [
-  { age: 23, name: "Оля" },
-  { age: 29, name: "Аня" },
+  { age: 25, name: "Оля" },
+  { age: 30, name: "Аня" },
   { age: 10, name: "Юля" },
   { age: 20, name: "Катя" },
 ];
-girls.push({ age: 18, name: "Леся" });
-// let age1 = girls.map((item) => item.age);
-// console.log(age1);
-// for (const iterator of age1) {
-//   let gt = iterator;
-//   console.log(gt);
-// }
+girls.push({ age: 15, name: "Леся" });
+
+let age = girls.map((vel) => vel.age);
+console.log(age);
+
+let age_fin = age.reduce((plus, item) => plus + item) / age.length;
+console.log(age_fin);
+
 /*WHILE    DO WHILE*/
 // let x = 0;
 // while (x < girls.length) {
