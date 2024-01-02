@@ -45,3 +45,86 @@ let showMovie = (age) => {
   return alert("Go go go!!!");
 };
 showMovie(11);
+
+function cikl(arrName) {
+  for (let i = 0; i < arrName.length; i++) {
+    const element = arrName[i];
+    console.log(element);
+  }
+}
+
+let arrt = ["dd", [2, 4, 7], "jih", { id: 133, name: "Olia" }, 24];
+
+cikl(arrt);
+
+{
+  function pers(cach) {
+    return cach / 100;
+  }
+
+  function tax(sum) {
+    return sum - pers(sum) * 20 - pers(sum) * 1.5;
+  }
+
+  let test = tax(10000);
+  console.log(test);
+}
+
+{
+  function girlsFilter(arr) {
+    let newGiglsMas = [];
+    for (const us of arr) {
+      if (us.age > 20) {
+        newGiglsMas.push(us);
+      }
+    }
+    return newGiglsMas;
+  }
+
+  let res = girlsFilter(girls);
+  console.log(res);
+}
+
+/*THIS */ {
+  let users = {
+    name: "Lesya",
+    age: 33,
+    greeting: function (msg) {
+      return `${msg} my name is ${this.name}`;
+    },
+  };
+
+  console.log(users.greeting("Hi"));
+}
+
+let watName = prompt("Wat is your name");
+alert(`My name is ${watName}`);
+
+// ---1---
+// Перепишіть функцію, використовуючи '?' або '||'
+// function checkAge(age) {
+//   age > 18 ? return true : confirm("Батьки дозволили?");
+// }
+
+// checkAge(9);
+
+function checkAge(age) {
+  if (age > 18) {
+    return true;
+  }
+  return confirm("Батьки дозволили?");
+}
+
+checkAge(14);
+document.write("Hhnjkbknjb");
+// ---2---
+// Напишіть функцію min(a, b), яка повертає менше з двох чисел a та b.
+
+//  ---3---
+// Перепишіть з використанням стрілкових функцій Замініть Функціональні Вирази на стрілкові функції у коді нижче:
+// function ask(question, yes, no) { if (confirm(question)) yes();
+// else no(); }
+// ask(
+// "Ви згодні?",
+// function() { alert("Ви погодились."); }, function() { alert("Ви скасували виконання."); }
+// );
