@@ -81,8 +81,8 @@ cikl(arrt);
     return newGiglsMas;
   }
 
-  let res = girlsFilter(girls);
-  console.log(res);
+  // let res = girlsFilter(girls);
+  // console.log(res);
 }
 
 /*THIS */ {
@@ -102,29 +102,36 @@ alert(`My name is ${watName}`);
 
 // ---1---
 // Перепишіть функцію, використовуючи '?' або '||'
-// function checkAge(age) {
-//   age > 18 ? return true : confirm("Батьки дозволили?");
-// }
-
-// checkAge(9);
-
 function checkAge(age) {
-  if (age > 18) {
-    return true;
-  }
-  return confirm("Батьки дозволили?");
+  age > 18 ? true : confirm("Батьки дозволили?");
 }
 
-checkAge(14);
-document.write("Hhnjkbknjb");
+checkAge(9);
+
 // ---2---
 // Напишіть функцію min(a, b), яка повертає менше з двох чисел a та b.
 
+function min(a, b) {
+  if (a < b) {
+    return a;
+  } else {
+    return b;
+  }
+}
+let audit = min(4, 9);
+console.log(audit);
 //  ---3---
-// Перепишіть з використанням стрілкових функцій Замініть Функціональні Вирази на стрілкові функції у коді нижче:
-// function ask(question, yes, no) { if (confirm(question)) yes();
-// else no(); }
-// ask(
-// "Ви згодні?",
-// function() { alert("Ви погодились."); }, function() { alert("Ви скасували виконання."); }
-// );
+// Перепишіть з використаинням стрілкових функцій Замініть Функціональні Вирази на стрілкові функції у коді нижче:
+let ask = (question, yes, no) => {
+  if (confirm(question)) yes();
+  else no();
+};
+ask(
+  "Ви згодні?",
+  function () {
+    alert("Ви погодились.");
+  },
+  function () {
+    alert("Ви скасували виконання.");
+  }
+);
