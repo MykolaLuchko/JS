@@ -83,8 +83,32 @@ let fruts = [
   console.log(includes);
 
 
+  //_______________!!!!!!!!!________________!!!!!!!!!!!!!_________________!!!!!!!!!!!!_________________!!!!!!!!!!!!!!!___________________!!!!!!!!!!//
 
+  let users = [
+    {name:'Nik', age: 21, status: true},
+    {name:'Maks', age: 24, status: false},
+    {name:'Olya', age: 75, status: true},
+    {name:'Den', age: 15, status: true},
+    {name:'Djek', age: 41, status: false},
+    {name:'Djo', age: 45, status: false},
+    {name:'Kate', age: 32, status: true},
+    {name:'Cati', age: 23, status: false}
+  ];
 
+  let arr2 = [];
+  users.forEach(value=>arr2.push(value.name))//_______________________________________________forEach
+  console.log(arr2);
+
+ 
+   let arr3 = users.filter(value=>value.age < 30);//___________________________________________filter
+   console.log(arr3);
+
+   let mapUsers = users.map((value, index) =>{return{name:value.name, id : index+1}});//___________________________________________map повертає видозмінений обєкт
+   console.log(mapUsers);
+
+   let find = users.find(value=> value.name === "Den");//___________________________________________find
+   console.log(find);
 
 
  
