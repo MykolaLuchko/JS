@@ -71,6 +71,16 @@ cikl(arrt);
 }
 
 {
+let usr = function userBilder(name,age) {
+  let usersFun = {name, age};
+  return usersFun;
+}
+console.log(usr('Max',54));
+console.log(usr('den',23));
+}
+
+
+{
   function girlsFilter(arr) {
     let newGiglsMas = [];
     for (const us of arr) {
