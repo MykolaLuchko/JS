@@ -56,14 +56,42 @@ let usNewAge = bild.setAge(99);
 console.log(usAge());
 
 //_______________________________________________________this
+{
+  function changeColor() {
+    let style = this.style;
+    style.background = "green";
+    style.color = "red";
+    style.border = 1;
+  }
 
-function changeColor() {
-  console.log(this);
-  this.style.background = "green";
+  let userT = document.querySelectorAll("div");
+  userT.forEach(function (element) {
+    element.onclick = changeColor;
+  });
 }
 
-let usd = document.querySelectorAll("div");
+{
+  //____________________________________________bind в this__________
+  const Nikol = {
+    name: "Nikol",
+    age: 23,
+    info: function (city) {
+      console.log(`My name is ${this.name}`);
+      console.log(`My age is ${this.age}`);
+      console.log(`City is ${city}`);
+    },
+  };
+  Nikol.info();
 
-usd.forEach(function (element) {
-    element.onclick = changeColor;
-})
+  const Mikki = {
+    name: "Mikki",
+    age: 29,
+  };
+  Nikol.info.bind(Mikki, "Lviv")();
+
+  const Tom = {
+    name: "Tom",
+    age: 42,
+  };
+  Nikol.info.bind(Tom)("Kiev");
+}
