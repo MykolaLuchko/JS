@@ -30,7 +30,7 @@ console.log(foo);
 console.log(foo());
 
 function userBilder(name, age) {
-  let usersFun = { name, age };
+  let usersFun = {name, age};
   return {
     getName() {
       return usersFun.name;
@@ -67,3 +67,65 @@ let usd = document.querySelectorAll("div");
 usd.forEach(function (element) {
     element.onclick = changeColor;
 })
+
+//_________________________________________________________call
+{
+const userInfo = {
+  name: "name",
+  age: 23,
+  logInfo: function (job) {
+    console.group(`${name} info:`);
+    console.log(`Name is ${this.name}`);
+    console.log(`Age is ${this.age}`);
+    console.log(`Job is ${job}`);
+    console.groupEnd();
+  }
+};
+ userInfo.logInfo();
+
+ const MikiInfo = {
+  name:"Miki",
+  age:18,
+ };
+ userInfo.logInfo.call(MikiInfo, 'JS developer');//одразу викликає(схоже на bind)
+}
+
+{
+const showMass = function (name, stars) {
+  console.log(`${name}!!! Welkom to ${this.hotel} hotel. Sars - ${stars}`);
+  }
+
+const Bokovel = {hotel:"Bukovel&SPA", price: 45000 };
+const Dragobrat = {hotel:"Dragobrat&SPA", price: 18000 };
+
+showMass.call(Bokovel, "Nik", 4)
+showMass.apply(Bokovel, ["Nik", 4])////////////////////////apply
+showMass.bind(Bokovel, "Nik", 4)();
+}
+
+
+{
+let curt = {
+  showItemc(){
+    console.log(`"В корзині:" ${this.items}`);
+  },
+};
+
+const woman = {
+  items:['Сукня', 'Боді']
+};
+
+const man = {
+  items:['Джинси', 'Рюкзак']
+};
+
+const kid = {
+  items:['Футболка', 'колготи']
+};
+
+curt.showItemc.bind(man)();
+
+document.querySelector('#wom').addEventListener('click', curt.showItemc.bind(woman));
+document.querySelector('#man').addEventListener('click', curt.showItemc.bind(man));
+document.querySelector('#kids').addEventListener('click', curt.showItemc.bind(kid));
+}
