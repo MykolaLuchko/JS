@@ -70,94 +70,96 @@ console.log(usAge());
   });
 }
 
-{
-  //____________________________________________bind в this__________
-  const Nikol = {
-    name: "Nikol",
-    age: 23,
-    info: function (city) {
-      console.log(`My name is ${this.name}`);
-      console.log(`My age is ${this.age}`);
-      console.log(`City is ${city}`);
-    },
-  };
-  Nikol.info();
+//____________________________________________bind в this__________
+const Nikol = {
+  name: "Nikol",
+  age: 23,
+  info: function (city) {
+    console.log(`My name is ${this.name}`);
+    console.log(`My age is ${this.age}`);
+    console.log(`City is ${city}`);
+  },
+};
+Nikol.info();
 
-  const Mikki = {
-    name: "Mikki",
-    age: 29,
-  };
-  Nikol.info.bind(Mikki, "Lviv")();
+const Mikki = {
+  name: "Mikki",
+  age: 29,
+};
+Nikol.info.bind(Mikki, "Lviv")();
 
-  const Tom = {
-    name: "Tom",
-    age: 42,
-  };
-  Nikol.info.bind(Tom)("Kiev");
-=======
+const Tom = {
+  name: "Tom",
+  age: 42,
+};
+Nikol.info.bind(Tom)("Kiev");
 usd.forEach(function (element) {
-    element.onclick = changeColor;
-})
+  element.onclick = changeColor;
+});
 
 //_________________________________________________________call
 {
-const userInfo = {
-  name: "name",
-  age: 23,
-  logInfo: function (job) {
-    console.group(`${name} info:`);
-    console.log(`Name is ${this.name}`);
-    console.log(`Age is ${this.age}`);
-    console.log(`Job is ${job}`);
-    console.groupEnd();
-  }
-};
- userInfo.logInfo();
+  const userInfo = {
+    name: "name",
+    age: 23,
+    logInfo: function (job) {
+      console.group(`${name} info:`);
+      console.log(`Name is ${this.name}`);
+      console.log(`Age is ${this.age}`);
+      console.log(`Job is ${job}`);
+      console.groupEnd();
+    },
+  };
+  userInfo.logInfo();
 
- const MikiInfo = {
-  name:"Miki",
-  age:18,
- };
- userInfo.logInfo.call(MikiInfo, 'JS developer');//одразу викликає(схоже на bind)
+  const MikiInfo = {
+    name: "Miki",
+    age: 18,
+  };
+  userInfo.logInfo.call(MikiInfo, "JS developer"); //одразу викликає(схоже на bind)
 }
 
 {
-const showMass = function (name, stars) {
-  console.log(`${name}!!! Welkom to ${this.hotel} hotel. Sars - ${stars}`);
-  }
+  const showMass = function (name, stars) {
+    console.log(`${name}!!! Welkom to ${this.hotel} hotel. Sars - ${stars}`);
+  };
 
-const Bokovel = {hotel:"Bukovel&SPA", price: 45000 };
-const Dragobrat = {hotel:"Dragobrat&SPA", price: 18000 };
+  const Bokovel = { hotel: "Bukovel&SPA", price: 45000 };
+  const Dragobrat = { hotel: "Dragobrat&SPA", price: 18000 };
 
-showMass.call(Bokovel, "Nik", 4)
-showMass.apply(Bokovel, ["Nik", 4])////////////////////////apply
-showMass.bind(Bokovel, "Nik", 4)();
+  showMass.call(Bokovel, "Nik", 4);
+  showMass.apply(Bokovel, ["Nik", 4]); ////////////////////////apply
+  showMass.bind(Bokovel, "Nik", 4)();
 }
 
-
 {
-let curt = {
-  showItemc(){
-    console.log(`"В корзині:" ${this.items}`);
-  },
-};
+  let curt = {
+    showItemc() {
+      console.log(`"В корзині:" ${this.items}`);
+    },
+  };
 
-const woman = {
-  items:['Сукня', 'Боді']
-};
+  const woman = {
+    items: ["Сукня", "Боді"],
+  };
 
-const man = {
-  items:['Джинси', 'Рюкзак']
-};
+  const man = {
+    items: ["Джинси", "Рюкзак"],
+  };
 
-const kid = {
-  items:['Футболка', 'колготи']
-};
+  const kid = {
+    items: ["Футболка", "колготи"],
+  };
 
-curt.showItemc.bind(man)();
+  curt.showItemc.bind(man)();
 
-document.querySelector('#wom').addEventListener('click', curt.showItemc.bind(woman));
-document.querySelector('#man').addEventListener('click', curt.showItemc.bind(man));
-document.querySelector('#kids').addEventListener('click', curt.showItemc.bind(kid));
->>>>>>> a8ae0293c2afe0bb730a63c51cfc7eb39979f849
+  document
+    .querySelector("#wom")
+    .addEventListener("click", curt.showItemc.bind(woman));
+  document
+    .querySelector("#man")
+    .addEventListener("click", curt.showItemc.bind(man));
+  document
+    .querySelector("#kids")
+    .addEventListener("click", curt.showItemc.bind(kid));
 }
