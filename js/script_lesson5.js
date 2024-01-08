@@ -30,7 +30,7 @@ console.log(foo);
 console.log(foo());
 
 function userBilder(name, age) {
-  let usersFun = {name, age};
+  let usersFun = { name, age };
   return {
     getName() {
       return usersFun.name;
@@ -83,7 +83,6 @@ console.log(usAge());
   };
   Nikol.info();
 
-<<<<<<< HEAD
   const Mikki = {
     name: "Mikki",
     age: 29,
