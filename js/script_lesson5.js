@@ -93,9 +93,7 @@ const Tom = {
   age: 42,
 };
 Nikol.info.bind(Tom)("Kiev");
-usd.forEach(function (element) {
-  element.onclick = changeColor;
-});
+
 
 //_________________________________________________________call
 {
