@@ -40,7 +40,7 @@
   console.log(wife2);
 }
 
-//________________________________________Porototype в конструкторе
+//________________________________________Porototype в конструкторе (добавляє щось в конструктор" "можна зробити як посилання")
 {
   function UserBL(name, age, status) {
     this.name = name;
@@ -83,6 +83,7 @@
 //__________________________________________________Класи
 {
   class Bank {
+    static type = 'Privat';
     constructor(options) {
       this.summ = options.summ;
       this.month = options.month;
@@ -129,10 +130,60 @@
   const Mykola = new UserApdate("Mykola", 26, "lesya", "Makar");
   console.log(Mykola);
   console.log(Mykola.sms());
+  
 }
+
+
+//_________________________________________________get (для зчитування) & set (для зміни)
+{
+class WebUser {
+    constructor (name){
+        this.name = name;
+    }
+firstName = '';
+lastName = '';
+age = '';
+city = '';
+
+set name(nameValue){
+    const nameRow = nameValue.split(' ');
+    this.firstName = nameRow[0];
+    this.lastName = nameRow[1];
+}
+
+get name(){
+    return `First name -${firstName}, Last name -${lastName}`
+}
+}
+
+const Webus = new WebUser('Mykola Lychko');
+console.log(Webus);
+
+}
+
 // Домашнє завдання
 // Створити телефонну книгу
 // створити початковий клас Abonent, де зберігатимуться ім*я і номер створити set який прийматиме телефон і номер
 // створити get який виводитиме данні про абонента
 // створити три різних юзери
 // вивести данні
+
+class Abonent{
+    constructor(name, number){
+        this.name=name;
+        this.number=number;
+}
+set num(number){
+   return this.number = number
+}
+
+get num(){
+    document.write(`<div> ${ this.name} - ${this.number}</div>`)
+}
+
+}
+const efef = new Abonent('Mak', 548487484);
+console.log(efef);
+efef.number = 3265689;
+console.log(efef.number);
+efef.num();
