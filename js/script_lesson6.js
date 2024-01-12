@@ -137,8 +137,10 @@
 //_________________________________________________get (для зчитування) & set (для зміни)
 {
 class WebUser {
-    constructor (name){
+    constructor (name, age){
         this.name = name;
+        this.age = age;
+
     }
 firstName = '';
 lastName = '';
@@ -156,7 +158,7 @@ get name(){
 }
 }
 
-const Webus = new WebUser('Mykola Lychko');
+const Webus = new WebUser('Mykola Lychko', 25);
 console.log(Webus);
 
 }
@@ -171,19 +173,21 @@ console.log(Webus);
 class Abonent{
     constructor(name, number){
         this.name=name;
-        this.number=number;
+        this.number=number;     
 }
-set num(number){
-   return this.number = number
+pp=""
+set number(df){
+  let som = 'Номер ' + df;
+    this.pp = som;
 }
 
 get num(){
-    document.write(`<div> ${ this.name} - ${this.number}</div>`)
+    document.write(`<div> ${ this.name} - ${this.pp}</div>`)
 }
 
 }
 const efef = new Abonent('Mak', 548487484);
 console.log(efef);
 efef.number = 3265689;
-console.log(efef.number);
+console.log(efef);
 efef.num();
