@@ -190,4 +190,95 @@ const efef = new Abonent('Mak', 548487484);
 console.log(efef);
 efef.number = 3265689;
 console.log(efef);
-efef.num();
+//efef.num();
+
+
+{
+  class Circle {
+    constructor(selector){
+this.$el=document.querySelector(selector)
+    }
+
+    hide (){
+      this.$el.style.display = 'none';
+
+    }
+    show(){
+      this.$el.style.display = 'block';
+
+    }
+  }
+
+  class CircleItem extends Circle{
+    constructor(options){
+      super(options.selector);
+      this.$el.style.width = options.size+'px' ;
+      this.$el.style.height = options.size+'px' ;
+      this.$el.style.borderRadius = '50%';
+      this.$el.style.background = options.color;
+    }
+  }
+  const CircleRed = new CircleItem({
+    selector:'#circleItem',
+    color: 'red',
+    size: 50
+  });
+
+
+  const Circleyellow = new CircleItem({
+    selector:'#circleyellow',
+    color: 'yellow',
+    size: 80
+  });
+  
+  const Circlgreen= new CircleItem({
+    selector:'#circlegreen',
+    color: 'green',
+    size: 30
+  });
+
+
+Circleyellow.hide();
+}
+
+
+{
+  function Car(name, color) {
+    this.name = name;
+    this.color = color;
+      }
+
+      Car.prototype.sms = function () {
+        document.write (`<h3>${this.name} is ${this.color}</h3>`)
+      }
+
+const BMW = new Car('BMW','RED');
+const Opel = new Car('Opel','Green', 200);
+
+BMW.sms();
+Opel.sms();
+console.log(Opel);
+}
+
+//______________________________________________MIXIN
+{
+let someMix = {
+  sayHi(){
+    console.log(`Hi ${this.name}`);
+  },
+
+  sayBye(){
+    console.log(`By ${this.name}`);
+  },
+};
+class User{
+  constructor(name){
+this.name = name;
+  }
+}
+
+Object.assign(User.prototype, someMix);
+const Iv = new User('Ivan');
+Iv.sayHi();
+
+} 
