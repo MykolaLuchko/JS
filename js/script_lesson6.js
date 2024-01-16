@@ -280,5 +280,31 @@ this.name = name;
 Object.assign(User.prototype, someMix);
 const Iv = new User('Ivan');
 Iv.sayHi();
-
 } 
+// Домашнє завдання
+// ----1----
+// Створіть функцію-конструктор Calculator, який створює об’єкти з трьома
+// методами:
+// read() запитує два значення за допомогою prompt і запам’ятовує їх у
+// властивостях об’єкта.
+// sum() повертає суму цих властивостей.
+// mul() повертає результат множення даних властивостей
+
+
+function Calculator() {
+  this.read = function() {
+    this. velue1 = +prompt('velue1?' );
+    this. velue2 = +prompt('velue2?' )
+  }
+  this.sum = function() {
+    return this. velue1 + this. velue2
+    
+  }
+  this. mul = function() {
+    return this. velue1 * this. velue2
+}
+}
+const qwerty = new Calculator();
+qwerty.read();
+alert(qwerty.sum())
+
