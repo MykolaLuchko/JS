@@ -23,7 +23,7 @@
 
 {
   let inform = document.getElementById('mass');
-  console.log(inform.value);// показує значення
+  console.log(inform.value);// показує значення input, select, textarea.
 }
 
 {
@@ -77,5 +77,28 @@
   lister.insertAdjacentHTML('afterend', '<p>afterend</p>')
   lister.insertAdjacentHTML('beforeend','<p>beforeend</p>')
 
-
+let m = lister.parentNode;
+console.log(m);
+let e = lister.previousSibling;
+console.log(e);
 }
+
+// Домашнє завдання
+// -----1-----
+// Напишіть код, щоб вибрати елемент з атрибутом data-widget-name з документа
+// та прочитати його значення.
+// <!DOCTYPE html>
+// <html>
+// <body>
+// <div data-widget-name="menu">Виберіть жанр</div>
+// <script>/* ваш код */</script>
+// </body>
+// </html>
+
+ // отримаємо його
+ let elem = document.querySelector('[data-widget-name]');
+
+ // прочитаємо значення
+ alert(elem.dataset.widgetName);
+ // чи
+ alert(elem.getAttribute('data-widget-name'));
