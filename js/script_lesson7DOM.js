@@ -104,6 +104,7 @@ let elem = document.querySelector("[data-widget-name]");
 //alert(elem.getAttribute("data-widget-name"));
 
 //--------------------------------------------DOM----------------
+//------------------------------------------Пошук
 console.log(document.head.children);
 
 //console.log(document.body.innerHTML);
@@ -140,4 +141,22 @@ console.log(document.head.children);
   for (const iterator of li) {
     console.log(iterator);
   }
+}
+//-----------------------------------Маніпуляція-------------------
+{
+  let target = document.querySelector('#target');
+  console.log(target.innerText);// доступ до тексту можна мінювати
+  target.innerHTML = `I like JS <span></span>`;
+  console.log(target.innerText);
+  target.classList.add('foo');
+  target.classList.toggle('res');// перемикач (додає або видаляє класс) 
+  console.log(target.getAttribute('xxx'));// показує значення атрибуту, класу та ін
+  console.log(target.getAttribute('id'));
+  console.log(target.getAttribute('class'));
+  //setAttribute - змінює
+  console.log(target.previousElementSibling);// показуєє елемент який стоїть перед
+  console.log(target.nextElementSibling);// показуєє елемент який стоїть після
+  console.log(target.childNodes);//Nods вузли
+  console.log(target.children);// html
+  console.log(target.outerHTML);//вид ззовні
 }
