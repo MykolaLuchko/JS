@@ -144,19 +144,50 @@ console.log(document.head.children);
 }
 //-----------------------------------Маніпуляція-------------------
 {
-  let target = document.querySelector('#target');
-  console.log(target.innerText);// доступ до тексту можна мінювати
+  let target = document.querySelector("#target");
+  console.log(target.innerText); // доступ до тексту можна мінювати
   target.innerHTML = `I like JS <span></span>`;
   console.log(target.innerText);
-  target.classList.add('foo');
-  target.classList.toggle('res');// перемикач (додає або видаляє класс) 
-  console.log(target.getAttribute('xxx'));// показує значення атрибуту, класу та ін
-  console.log(target.getAttribute('id'));
-  console.log(target.getAttribute('class'));
+  target.classList.add("foo");
+  target.classList.toggle("res"); // перемикач (додає або видаляє класс)
+  console.log(target.getAttribute("xxx")); // показує значення атрибуту, класу та ін
+  console.log(target.getAttribute("id"));
+  console.log(target.getAttribute("class"));
   //setAttribute - змінює
-  console.log(target.previousElementSibling);// показуєє елемент який стоїть перед
-  console.log(target.nextElementSibling);// показуєє елемент який стоїть після
-  console.log(target.childNodes);//Nods вузли
-  console.log(target.children);// html
-  console.log(target.outerHTML);//вид ззовні
+  console.log(target.previousElementSibling); // показуєє елемент який стоїть перед
+  console.log(target.nextElementSibling); // показуєє елемент який стоїть після
+  console.log(target.childNodes); //Nods вузли
+  console.log(target.children); // html
+  console.log(target.outerHTML); //вид ззовні
+}
+
+//__________________________________FORMS________________________________
+let form = document.forms.f1; //форма F1
+console.log(form);
+
+let form2 = document.forms.f2.userEmail; // or forms['f2']['userEmail']
+console.log(form2);
+
+//___________________________________CREAT DOM вузлів_________________
+let h1 = document.createElement("h1");
+h1.innerText = "Some very importent Chapter";
+document.body.appendChild(h1);
+
+{
+  const girls = [
+    { age: 25, name: "Оля" },
+    { age: 30, name: "Аня" },
+    { age: 10, name: "Юля" },
+    { age: 20, name: "Катя" },
+  ];
+  let DivGirls = document.getElementsByClassName("girls")[0];
+  for (const girl of girls) {
+    let DivGirl = document.createElement("div");
+    DivGirl.classList = "goodGirl";
+    DivGirl.innerText = girl.name + " - " + girl.age + " років";
+    let htwo = document.createElement("h2");
+    htwo.innerText = "До вашої уваги " + girl.name;
+    DivGirl.appendChild(htwo);
+    DivGirls.appendChild(DivGirl);
+  }
 }
