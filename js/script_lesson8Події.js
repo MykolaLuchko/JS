@@ -24,7 +24,8 @@ tar.onmousemove = function () {
 
 //==========================----input----=============
 
-document.forms.f3.login12.oninput = function () {
+let inp = document.forms.f3.login12;
+inp.oninput = function () {
   const value = this.value;
   if (value.includes("ass")) {
     alert("Wrong");
@@ -48,4 +49,30 @@ document.forms.f3.addEventListener("submit", function (e) {
 document.forms.f3.addEventListener("submit", function (e) {
   e.preventDefault();
   console.log(this.login12.value, "wrong3");
+});
+
+//==========================----contextmenu права кнопка миші----=============
+tar.addEventListener("contextmenu", () => console.log("contextmenu"));
+
+//==========================----onmouseout----=============
+tar.onmouseout = function () {
+  console.log("onmouseout");
+};
+//==========================----на клавіатуру----=============
+let btn = document.querySelector("#btn");
+btn.onkeypress = function () {
+  console.log("onkeypress");
+};
+
+//==========================----видалення----=============
+let add = document.querySelector("#Add");
+let remove = document.querySelector("#Remove");
+let click = document.querySelector("#Click");
+
+let great = () => console.log("Юху");
+add.addEventListener("click", () => {
+  click.addEventListener("click", great);
+});
+remove.addEventListener("click", () => {
+  click.removeEventListener("click", great);
 });
