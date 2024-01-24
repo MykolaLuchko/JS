@@ -13,6 +13,28 @@
         background-image: url(./img/pexels-pixabay-163872.jpg);
         background-size: contain;
       }
+      .nav{
+        list-style: none;
+      }
+      .liItem{
+        width: 30px;
+        height: 30px;
+        border: 3px solid rgb(7, 165, 177);
+        margin: 10px;
+
+      }
+      .liItem.active {
+background-color: chocolate;
+      }
+      .ball{
+        width: 80px;
+        height: 80px;
+        background-color: darkgreen;
+        border-radius: 50%;
+        z-index: 30;
+        position: absolute;
+      }
+
     </style>
   </head>
   <body>
@@ -146,6 +168,15 @@ Some information which may be being very importent </textarea
     <button class="btnm" id="Remove">Remove</button>
     <button class="btnm" id="Click">Click</button>
 
+    <ul class="nav" id="NaVi">
+      <li class="liItem">1</li>
+      <li class="liItem">2</li>
+      <li class="liItem">3</li>
+      <li class="liItem">4</li>
+      <li class="liItem">5</li>
+      <li class="liItem">6</li>
+    </ul>
+<div class="ball"></div>
     <!-- <script src="./js/script_lesson1-2.js"></script> -->
     <!-- <script src="./js/script_lesson3.js"></script> -->
     <!-- <script src="./script_lesson4.js"></script> -->

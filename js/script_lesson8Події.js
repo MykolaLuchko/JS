@@ -70,9 +70,27 @@ let remove = document.querySelector("#Remove");
 let click = document.querySelector("#Click");
 
 let great = () => console.log("Юху");
+
 add.addEventListener("click", () => {
   click.addEventListener("click", great);
 });
 remove.addEventListener("click", () => {
   click.removeEventListener("click", great);
 });
+
+//////////////////////////////////////////////////
+const nav = document.querySelector('#NaVi')
+function hendelClick(event) {
+  // console.log(event.target);
+  // event.target.classList.add('active')
+  if (nav.querySelector("li.active")) {
+    event.target.classList.remove("active")
+  } else{
+    event.target.classList.add('active')
+
+  }
+}
+nav.onclick = hendelClick;
+
+//========================----------Drag-and-drop--------==============
+let ball = document.querySelector('.ball')
