@@ -78,19 +78,33 @@ remove.addEventListener("click", () => {
   click.removeEventListener("click", great);
 });
 
-//////////////////////////////////////////////////
-const nav = document.querySelector('#NaVi')
+//=============================--------------------
+const nav = document.querySelector("#NaVi");
 function hendelClick(event) {
   // console.log(event.target);
   // event.target.classList.add('active')
   if (nav.querySelector("li.active")) {
-    event.target.classList.remove("active")
-  } else{
-    event.target.classList.add('active')
-
+    event.target.classList.remove("active");
+  } else {
+    event.target.classList.add("active");
   }
 }
 nav.onclick = hendelClick;
 
 //========================----------Drag-and-drop--------==============
-let ball = document.querySelector('.ball')
+let ball = document.querySelector(".ball");
+ball.onmousedown = function (event) {
+  function move(pageX, pageY) {
+    ball.style.left = pageX - ball.offsetWidth / 2 + "px";
+    ball.style.top = pageY - ball.offsetWidth / 2 + "px";
+  }
+  move(event.pageX, event.pageY);
+  function onMouse(event) {
+    move(event.pageX, event.pageY);
+  }
+  document.addEventListener("mousemove", onMouse);
+
+  ball.onmouseup = function () {
+    document.removeEventListener("mousemove", onMouse);
+  };
+};
