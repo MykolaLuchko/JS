@@ -98,7 +98,6 @@ ball.onmousedown = function (event) {
     ball.style.left = pageX - ball.offsetWidth / 2 + "px";
     ball.style.top = pageY - ball.offsetWidth / 2 + "px";
   }
-  move(event.pageX, event.pageY);
   function onMouse(event) {
     move(event.pageX, event.pageY);
   }
@@ -108,3 +107,18 @@ ball.onmousedown = function (event) {
     document.removeEventListener("mousemove", onMouse);
   };
 };
+// Домашнє завдання
+// -----1----
+// Напишіть такий JavaScript, щоб після натискання на кнопку button, елемент
+// <div id="text"> зникав.
+let btn = document.querySelector('#butnn');
+let sText = document.querySelector('#text');
+btn.onclick = function () {
+  sText.style.display = 'none';
+}
+
+// -----2----
+// Напишіть такий код, щоб після натискання на кнопку, вона зникала.
+
+// -----3----
+// Створіть дерево, яке показує/приховує дочірні вузли при кліці
