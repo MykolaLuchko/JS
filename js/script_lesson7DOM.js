@@ -58,6 +58,21 @@
 }
 
 {
+  let div = document.createElement("div");
+  div.textContent = "1";
+  let div1 = document.createElement("div");
+  div1.textContent = "Some text";
+  let div2 = document.createElement("div");
+  div2.textContent = "Headline: ";
+
+  div.append(div1);
+  div.prepend(div2); ////------------------вставляє перед дочірнім елементом
+  div.prepend("I love");
+
+  document.body.appendChild(div);
+}
+
+{
   const par = document.querySelector(".par");
   const ralf = document.querySelector(".ralf");
   const clon = ralf.cloneNode(true); // клонує

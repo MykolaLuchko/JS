@@ -33,6 +33,14 @@
         z-index: 30;
         position: absolute;
       }
+
+      .tree span:hover {
+        font-weight: bold;
+      }
+
+      .tree span {
+        cursor: pointer;
+      }
     </style>
   </head>
   <body>
@@ -175,9 +183,53 @@ Some information which may be being very importent </textarea
       <li class="liItem">6</li>
     </ul>
     <div class="ball"></div>
-<button id="butnn">Натисніть. щоб текст зник</button>
-<div id="text">Some text Some text Some text Some text</div>
+    <button id="butnn">Натисніть. щоб текст зник</button>
+    <div id="text">Some text Some text Some text Some text</div>
 
+    <button id="butnhid">Натисніть. щоб я зникла</button>
+
+    <ul class="tree" id="tree">
+      <li>
+        Тварини
+        <ul>
+          <li>
+            Ссавці
+            <ul>
+              <li>Корови</li>
+              <li>Осли</li>
+              <li>Собаки</li>
+              <li>Тигри</li>
+            </ul>
+          </li>
+          <li>
+            Інші
+            <ul>
+              <li>Змії</li>
+              <li>Птахи</li>
+              <li>Ящірки</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        Риби
+        <ul>
+          <li>
+            Акваріумні
+            <ul>
+              <li>Гуппі</li>
+              <li>Риба-янгол</li>
+            </ul>
+          </li>
+          <li>
+            Морські
+            <ul>
+              <li>Морська форель</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
     <!-- <script src="./js/script_lesson1-2.js"></script> -->
     <!-- <script src="./js/script_lesson3.js"></script> -->
     <!-- <script src="./script_lesson4.js"></script> -->
