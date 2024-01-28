@@ -107,6 +107,17 @@ ball.onmousedown = function (event) {
     document.removeEventListener("mousemove", onMouse);
   };
 };
+//=======================---------------Рекурсія---------=================
+function explorer(htmlElement) {
+  console.log(htmlElement);
+  let children = htmlElement.children;
+  if (children.lenght !== 0) {
+    for (const child of children) {
+      explorer(child);
+    }
+  }
+}
+explorer(document.body);
 // Домашнє завдання
 // -----1----
 // Напишіть такий JavaScript, щоб після натискання на кнопку button, елемент
