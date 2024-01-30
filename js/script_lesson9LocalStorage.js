@@ -1,5 +1,5 @@
+let inpUTS = document.getElementsByName("sex");
 function onchan() {
-  let inpUTS = document.getElementsByName("sex");
   if (inpUTS[0].checked) {
     console.log("жінка");
   } else {
@@ -7,10 +7,12 @@ function onchan() {
   }
 }
 
-let fort = document.getElementsByClassName("formgt");
-let inputName = document.getElementsByClassName("inputName");
-let inputLastName = document.getElementsByClassName("inputLastName");
+let fort = document.querySelector(".formgt");
+let inputName = document.querySelector(".inputName");
+let inputLastName = document.querySelector(".inputLastName");
 let age = document.getElementById("age");
+
+fort.addEventListener("submit", dehendClick);
 
 function dehendClick(event) {
   event.preventDefault();
@@ -21,6 +23,7 @@ function dehendClick(event) {
     male: inpUTS[0].checked,
   };
   console.log(user);
+  localStorage.setItem("key", JSON.stringify(user));
 }
-
-fort.addEventListener("submit", dehendClick);
+let a = localStorage.getItem("key");
+console.log(JSON.parse(a));
