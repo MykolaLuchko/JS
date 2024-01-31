@@ -1,4 +1,5 @@
 let inpUTS = document.getElementsByName("sex");
+// console.log(inpUTS)     Массив
 function onchan() {
   if (inpUTS[0].checked) {
     console.log("жінка");
