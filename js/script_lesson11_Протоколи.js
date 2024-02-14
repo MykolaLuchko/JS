@@ -45,46 +45,75 @@ mono();
   someFun2();
 }
 
-let post = async()=>{
+let post = async () => {
   let user = {
-    name: 'Nik',
-    age: 26
-  }
-  
+    name: "Nik",
+    age: 26,
+  };
+
   let respo = await fetch(url, {
-method: 'POST',
-headers:{
-  "Content-Type": "aplication/json",
-},
-  });  
+    method: "POST",
+    headers: {
+      "Content-Type": "aplication/json",
+    },
+  });
 };
 //------------------------------------------try-catch-----------
 try {
-  conole.log('Norm');
+  conole.log("Norm");
 } catch (error) {
-  console.log('Err');
-
+  console.log("Err");
 }
 
 setTimeout(function () {
   try {
-    conole.log('Norm');
+    conole.log("Norm");
   } catch (error) {
-    console.log(error.name); 
-    console.log(error.message); 
-    console.log(error.stack); 
+    console.log(error.name);
+    console.log(error.message);
+    console.log(error.stack);
 
-    console.log('Err_function');
-  }  
-}, 1000
-)
-//---------------------------------Exemples---
-let json= `{"name":"Ann"}`;
+    console.log("Err_function");
+  }
+}, 1000);
+//------------------------------------------Exemples---
+let json = `{"name":"Ann"}`;
 try {
   let user = JSON.parse(json);
-  if(!user.city){
-  throw new SyntaxError('Немає міста');
+  if (!user.city) {
+    throw new SyntaxError("Немає міста");
   }
 } catch (error) {
-  console.log(error, "Зовсім немає міста");  
+  console.log(error, "Зовсім немає міста");
 }
+
+//------------------------------------------WebSocket-----------
+let socket = new WebSocket(
+  "wss://javascript.info/article/websocket/demo/hello"
+);
+
+socket.onopen = function (e) {
+  alert("[open] Connection established");
+  alert("Sending to server");
+  socket.send("My name is John");
+};
+
+socket.onmessage = function (event) {
+  alert(`[message] Data received from server: ${event.data}`);
+};
+
+socket.onclose = function (event) {
+  if (event.wasClean) {
+    alert(
+      `[close] Connection closed cleanly, code=${event.code} reason=${event.reason}`
+    );
+  } else {
+    // e.g. server process killed or network down
+    // event.code is usually 1006 in this case
+    alert("[close] Connection died");
+  }
+};
+
+socket.onerror = function (error) {
+  alert(error);
+};
