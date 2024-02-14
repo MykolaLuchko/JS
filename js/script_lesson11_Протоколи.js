@@ -44,3 +44,47 @@ mono();
   }
   someFun2();
 }
+
+let post = async()=>{
+  let user = {
+    name: 'Nik',
+    age: 26
+  }
+  
+  let respo = await fetch(url, {
+method: 'POST',
+headers:{
+  "Content-Type": "aplication/json",
+},
+  });  
+};
+//------------------------------------------try-catch-----------
+try {
+  conole.log('Norm');
+} catch (error) {
+  console.log('Err');
+
+}
+
+setTimeout(function () {
+  try {
+    conole.log('Norm');
+  } catch (error) {
+    console.log(error.name); 
+    console.log(error.message); 
+    console.log(error.stack); 
+
+    console.log('Err_function');
+  }  
+}, 1000
+)
+//---------------------------------Exemples---
+let json= `{"name":"Ann"}`;
+try {
+  let user = JSON.parse(json);
+  if(!user.city){
+  throw new SyntaxError('Немає міста');
+  }
+} catch (error) {
+  console.log(error, "Зовсім немає міста");  
+}
